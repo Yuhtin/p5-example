@@ -5,7 +5,6 @@ const wO = 396;
 const wL = 220;
 const h = 35 * stripe;
 
-// Velocidade do scroll das listras (px/seg)
 const driftSpeed = 18;
 
 function setup() {
@@ -22,7 +21,6 @@ function draw() {
   drawL(wS + wO, drift);
 }
 
-// Modulo que sempre retorna positivo, pra wraparound suave
 function wrap(v, m) {
   return ((v % m) + m) % m;
 }
@@ -88,7 +86,6 @@ function drawO(x, drift) {
   fill(255);
   rect(x + innerX, topY, innerW, bottomY - topY);
 
-  // Listras horizontais do miolo, recortadas no retângulo interno
   push();
   drawingContext.beginPath();
   drawingContext.rect(stripeX, topY, stripeW, bottomY - topY);
